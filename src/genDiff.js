@@ -2,9 +2,7 @@
 import _ from 'lodash';
 
 const genDiff = (data1, data2) => {
-  const keys1 = _.keys(data1);
-  const keys2 = _.keys(data2);
-  const keys = _.union(keys1, keys2);
+  const keys = _.union(_.keys(data1), _.keys(data2));
 
   const result = {};
   for (const key of keys) {
