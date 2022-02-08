@@ -3,8 +3,8 @@ SF:src/multi.js
 FN:1,(anonymous_0)
 FNF:1
 FNH:1
-FNDA:2,(anonymous_0)
-DA:1,2
+FNDA:1,(anonymous_0)
+DA:1,1
 LF:1
 LH:1
 BRF:0
@@ -15,8 +15,8 @@ SF:src/sum.js
 FN:1,(anonymous_0)
 FNF:1
 FNH:1
-FNDA:2,(anonymous_0)
-DA:1,2
+FNDA:1,(anonymous_0)
+DA:1,1
 LF:1
 LH:1
 BRF:0
