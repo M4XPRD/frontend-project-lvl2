@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import _ from 'lodash';
 
 const genDiff = (data1, data2) => {

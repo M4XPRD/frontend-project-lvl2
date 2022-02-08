@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
 
-import { sum } from '../src/sum.js';
+import sum from '../src/sum.js';
 
 test('sum', () => {
   expect(sum(1, 2)).toEqual(3);
