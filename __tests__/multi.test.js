@@ -1,3 +1,4 @@
+/* eslint-disable spaced-comment */
 /* eslint-disable no-undef */
 /*eslint linebreak-style: ["error", "windows"]*/
 

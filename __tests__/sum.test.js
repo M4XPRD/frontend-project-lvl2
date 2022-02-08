@@ -1,5 +1,5 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
-/*eslint linebreak-style: ["error", "windows"]*/
 
 import { sum } from '../src/sum.js';
 
