@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/M4XPRD/frontend-project-lvl2#readme",
   "dependencies": {
+    "lodash": "^4.17.21",
     "commander": "^8.3.0"
   },
   "devDependencies": {
@@ -29,7 +30,6 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^26.1.0",
     "jest": "^27.4.7",
-    "lodash": "^4.17.21",
     "power-assert": "^1.6.1"
   }
 }
