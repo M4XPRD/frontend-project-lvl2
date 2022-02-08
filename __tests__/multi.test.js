@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+/*eslint linebreak-style: ["error", "windows"]*/
 
 import { multi } from '../src/multi.js';
 
