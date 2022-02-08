@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-/* eslint-disable linebreak-style */
+
 import { sum } from '../src/sum.js';
 
 test('sum', () => {

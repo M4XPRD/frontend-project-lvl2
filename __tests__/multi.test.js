@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-/* eslint-disable linebreak-style */
+
 import { multi } from '../src/multi.js';
 
 test('multi', () => {
