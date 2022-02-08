@@ -1,0 +1,14 @@
+name: linter-check
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Install Dependencies
+        run: make install
+      - name: Run Linter
+        run: make lint
