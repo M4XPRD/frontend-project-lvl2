@@ -21,8 +21,9 @@
   },
   "homepage": "https://github.com/M4XPRD/frontend-project-lvl2#readme",
   "dependencies": {
-    "lodash": "^4.17.21",
-    "commander": "^8.3.0"
+    "@hexlet/immutable-fs-trees": "^0.7.1",
+    "commander": "^8.3.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^8.8.0",
