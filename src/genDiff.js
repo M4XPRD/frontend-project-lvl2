@@ -2,23 +2,27 @@
 import _ from 'lodash';
 
 const genDiff = (data1, data2) => {
-  const keys1 = _.keys(data1);
-  const keys2 = _.keys(data2);
-  const keys = _.union(keys1, keys2);
+  const json1 = JSON.parse(data1);
+  const json2 = JSON.parse(data2);
+  const keys1 = _.keys(json1);
+  const keys2 = _.keys(json2);
+  const keys = _.sortBy(_.union(keys1, keys2));
 
-  const result = {};
+  const result = [];
   for (const key of keys) {
-    if (!_.has(data1, key)) {
-      result[key] = 'added';
-    } else if (!_.has(data2, key)) {
-      result[key] = 'deleted';
-    } else if (data1[key] !== data2[key]) {
-      result[key] = 'changed';
+    if (!_.has(json1, key)) {
+      result.push(`+ ${key}: ${json2[key]}`);
+    } else if (!_.has(json2, key)) {
+      result.push(`- ${key}: ${json1[key]}`);
+    } else if (json1[key] !== json2[key]) {
+      result.push(`- ${key}: ${json1[key]}`, `+ ${key}: ${json2[key]}`);
+    } else if (json1[key] === json2[key]) {
+      result.push(`  ${key}: ${json1[key]}`);
     }
-    result[key] = 'unchanged';
   }
-
-  return result;
+  return ['{', ...result, '}'].join('\n');
 };
 
 export default genDiff;
+
+console.log(genDiff('{ "host": "hexlet.io", "timeout": 50, "proxy": "123.234.53.22", "follow": false }', '{ "timeout": 20, "verbose": true, "host": "hexlet.io" }'));
