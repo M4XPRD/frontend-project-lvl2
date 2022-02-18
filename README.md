@@ -1,6 +1,6 @@
 ## Hexlet tests and linter status:
 [![Actions Status](https://github.com/M4XPRD/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/M4XPRD/frontend-project-lvl2/actions)
-[![linter-check](https://github.com/M4XPRD/frontend-project-lvl2/actions/workflows/project-check.yml/badge.svg)](https://github.com/M4XPRD/frontend-project-lvl2/actions/workflows/project-check.yml)
+[![project-check](https://github.com/M4XPRD/frontend-project-lvl2/actions/workflows/project-check.yml/badge.svg)](https://github.com/M4XPRD/frontend-project-lvl2/actions/workflows/project-check.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/fb5424cb2db36a0fee0b/maintainability)](https://codeclimate.com/github/M4XPRD/frontend-project-lvl2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fb5424cb2db36a0fee0b/test_coverage)](https://codeclimate.com/github/M4XPRD/frontend-project-lvl2/test_coverage)
 
