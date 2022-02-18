@@ -12,3 +12,5 @@ jobs:
         run: make install
       - name: Run Linter
         run: make lint
+      - name: Run Jest
+        run: make test-coverage
