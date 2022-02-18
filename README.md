@@ -6,3 +6,6 @@
 
 ## Difference between two JSON files:
 [![asciicast](https://asciinema.org/a/469841.svg)](https://asciinema.org/a/469841)
+
+## Difference between two YAML files:
+[![asciicast](https://asciinema.org/a/470085.svg)](https://asciinema.org/a/470085)
