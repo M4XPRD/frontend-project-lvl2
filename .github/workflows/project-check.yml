@@ -12,5 +12,10 @@ jobs:
         run: make install
       - name: Run Linter
         run: make lint
-      - name: Run Jest
-        run:  make test-coverage
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CODECLIMATE_TC_ID: ${{ secrets.CODECLIMATE_TC_ID }}
+        with:
+          coverageCommand: make test-coverage
+          debug: true
