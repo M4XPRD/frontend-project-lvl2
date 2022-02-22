@@ -4,8 +4,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/fb5424cb2db36a0fee0b/maintainability)](https://codeclimate.com/github/M4XPRD/frontend-project-lvl2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fb5424cb2db36a0fee0b/test_coverage)](https://codeclimate.com/github/M4XPRD/frontend-project-lvl2/test_coverage)
 
-## Difference between two JSON files:
+## Difference between two flat JSON files:
 [![asciicast](https://asciinema.org/a/469841.svg)](https://asciinema.org/a/469841)
 
-## Difference between two YAML files:
+## Difference between two flat YAML files:
 [![asciicast](https://asciinema.org/a/470085.svg)](https://asciinema.org/a/470085)
