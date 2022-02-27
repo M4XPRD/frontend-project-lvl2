@@ -1,27 +1,17 @@
-import _ from 'lodash';
 import parseFile from './parsers.js';
+import objectDiff from './objectDiff.js';
+import format from './formatters/format.js';
 
-const genDiff = (filepath1, filepath2) => {
+const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const file1 = parseFile(filepath1);
   const file2 = parseFile(filepath2);
-  const keys1 = _.keys(file1);
-  const keys2 = _.keys(file2);
-  const keys = _.sortBy(_.union(keys1, keys2));
 
-  const result = keys.reduce((array, key) => {
-    if (!_.has(file1, key)) {
-      array.push(`+ ${key}: ${file2[key]}`);
-    } else if (!_.has(file2, key)) {
-      array.push(`- ${key}: ${file1[key]}`);
-    } else if (file1[key] !== file2[key]) {
-      array.push(`- ${key}: ${file1[key]}`, `+ ${key}: ${file2[key]}`);
-    } else if (file1[key] === file2[key]) {
-      array.push(`  ${key}: ${file1[key]}`);
-    }
-    return array;
-  }, []);
+  const diffBetweenObjects = objectDiff(file1, file2);
+  const formatter = format(diffBetweenObjects, formatName);
 
-  return ['{', ...result, '}'].join('\n');
+  return formatter;
 };
 
 export default genDiff;
+
+// console.log(genDiff('./__fixtures__/file1.json', './__fixtures__/file2.json'));
