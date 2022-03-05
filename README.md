@@ -9,3 +9,6 @@
 
 ## Difference between two flat YAML files:
 [![asciicast](https://asciinema.org/a/470085.svg)](https://asciinema.org/a/470085)
+
+## Difference between two nested files:
+[![asciicast](https://asciinema.org/a/473862.svg)](https://asciinema.org/a/473862)
