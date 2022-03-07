@@ -8,8 +8,10 @@ const format = (file, formatName = 'stylish') => {
       return stylish(file);
     case 'plain':
       return plain(file);
-    default:
+    case 'json':
       return json(file);
+    default:
+      return new Error('Unknown format!');
   }
 };
 
