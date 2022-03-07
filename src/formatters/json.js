@@ -1,3 +1,3 @@
-const json = (file) => JSON.stringify(file, null, 2);
+const json = (file) => JSON.stringify(file, null, ' '.repeat(4));
 
 export default json;
