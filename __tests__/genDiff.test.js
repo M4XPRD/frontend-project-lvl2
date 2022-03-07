@@ -17,19 +17,28 @@ const filepath3 = getFixturePath('file1.yml');
 const filepath4 = getFixturePath('file2.yaml');
 const expectedStylish = readFile('expected-stylish.txt');
 const expectedPlain = readFile('expected-plain.txt');
+const expectedJSON = readFile('expected-json.txt');
 
-test('difference between two JSONs with stylish', () => {
+test('difference between two JSONs in stylish', () => {
   expect(genDiff(filepath1, filepath2)).toBe(expectedStylish);
 });
 
-test('difference between two JSONs with plain', () => {
+test('difference between two JSONs in plain', () => {
   expect(genDiff(filepath1, filepath2, 'plain')).toBe(expectedPlain);
 });
 
-test('difference between two YAMLs with stylish', () => {
+test('difference between two JSONs in json', () => {
+  expect(genDiff(filepath1, filepath2, 'json')).toBe(expectedJSON);
+});
+
+test('difference between two YAMLs in stylish', () => {
   expect(genDiff(filepath3, filepath4)).toBe(expectedStylish);
 });
 
-test('difference between two YAMLs with plain', () => {
+test('difference between two YAMLs in plain', () => {
   expect(genDiff(filepath3, filepath4, 'plain')).toBe(expectedPlain);
+});
+
+test('difference between two YAMLs in json', () => {
+  expect(genDiff(filepath3, filepath4, 'json')).toBe(expectedJSON);
 });
