@@ -1,27 +1,38 @@
 import _ from 'lodash';
-import parseFile from '../parsers.js';
 
-const plainDiff = (filepath1, filepath2) => {
-  const file1 = parseFile(filepath1);
-  const file2 = parseFile(filepath2);
-  const keys1 = _.keys(file1);
-  const keys2 = _.keys(file2);
-  const keys = _.sortBy(_.union(keys1, keys2));
-
-  const result = keys.reduce((array, key) => {
-    if (!_.has(file1, key)) {
-      array.push(`+ ${key}: ${file2[key]}`);
-    } else if (!_.has(file2, key)) {
-      array.push(`- ${key}: ${file1[key]}`);
-    } else if (file1[key] !== file2[key]) {
-      array.push(`- ${key}: ${file1[key]}`, `+ ${key}: ${file2[key]}`);
-    } else if (file1[key] === file2[key]) {
-      array.push(`  ${key}: ${file1[key]}`);
-    }
-    return array;
-  }, []);
-
-  return ['{', ...result, '}'].join('\n');
+const getRightValue = (value) => {
+  if (_.isObject(value)) {
+    return '[complex value]';
+  }
+  if (_.isString(value)) {
+    return `'${value}'`;
+  }
+  return String(value);
 };
 
-export default plainDiff;
+const plain = (data) => {
+  const iter = (tree, path = '') => {
+    const result = tree.flatMap(({
+      key, type, value, children,
+    }) => {
+      const currentPath = ([...path, key]);
+      const fullPath = currentPath.join('.');
+      switch (type) {
+        case 'nested':
+          return iter(children, currentPath);
+        case 'added':
+          return `Property '${fullPath}' was added with value: ${getRightValue(value)}`;
+        case 'removed':
+          return `Property '${fullPath}' was removed`;
+        case 'updated':
+          return `Property '${fullPath}' was updated. From ${getRightValue(value.value1)} to ${getRightValue(value.value2)}`;
+        default:
+          return null;
+      }
+    });
+    return result;
+  };
+  return iter(data).filter(((element) => element !== null)).join('\n');
+};
+
+export default plain;
