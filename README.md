@@ -15,3 +15,6 @@
 
 ## Difference between two nested files (plain format):
 [![asciicast](https://asciinema.org/a/474906.svg)](https://asciinema.org/a/474906)
+
+## Difference between two nested files (json format):
+[![asciicast](https://asciinema.org/a/474928.svg)](https://asciinema.org/a/474928)
