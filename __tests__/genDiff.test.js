@@ -16,7 +16,7 @@ const filepath1 = getFixturePath('file1.json');
 const filepath2 = getFixturePath('file2.json');
 const filepath3 = getFixturePath('file1.yml');
 const filepath4 = getFixturePath('file2.yaml');
-// const wrongFileExtension = getFixturePath('file1.txt');
+const wrongFileExtension = getFixturePath('file1.txt');
 const expectedStylish = readFile('expected-stylish.txt');
 const expectedPlain = readFile('expected-plain.txt');
 const expectedJSON = readFile('expected-json.txt');
@@ -45,6 +45,12 @@ test('difference between two YAMLs in json', () => {
   expect(genDiff(filepath3, filepath4, 'json')).toBe(expectedJSON);
 });
 
-// test('wrong file extention', () => {
-//   expect(genDiff(wrongFileExtension, filepath4, 'json')).toThrowError('Unknown extension!');
-// });
+test('wrong file extention', () => {
+  expect(() => genDiff(wrongFileExtension, filepath4, 'json'))
+    .toThrowError('Unknown extension!');
+});
+
+test('wrong format', () => {
+  expect(() => genDiff(filepath1, filepath2, 'smlish'))
+    .toThrowError('Unknown format!');
+});
