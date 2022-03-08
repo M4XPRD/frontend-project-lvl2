@@ -11,7 +11,7 @@ const format = (file, formatName = 'stylish') => {
     case 'json':
       return json(file);
     default:
-      return new Error('Unknown format!');
+      throw new Error('Unknown format!');
   }
 };
 
