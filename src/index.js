@@ -1,16 +1,18 @@
 /* eslint-disable max-len */
 import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
+// import { fileURLToPath } from 'url';
 import path from 'path';
 import parseFile from './parsers.js';
 import objectDiff from './diff.js';
 import format from './formatters/format.js';
 
-const formFullPath = (filepath) => {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-  return path.isAbsolute(filepath) ? filepath : path.join(__dirname, '..', '__fixtures__', filepath);
-};
+const formFullPath = (filepath) => path.resolve('__fixtures__', filepath);
+
+// const formFullPath = (filepath) => {
+//   const __filename = fileURLToPath(import.meta.url);
+//   const __dirname = path.dirname(__filename);
+//   return path.isAbsolute(filepath) ? filepath : path.join(__dirname, '..', '__fixtures__', filepath);
+// };
 
 // console.log(formFullPath('file1.json')); // c:\Users\advma\Desktop\Folder\frontend-project-lvl2\__fixtures__\file1.json
 
@@ -28,7 +30,10 @@ const formFullPath = (filepath) => {
 // Error: ENOENT: no such file or directory, open '/mnt/c/Users/advma/Desktop/Folder/frontend-project-lvl2/file1.json'
 
 // В итоге я не могу запустить команду gendiff из корневой папки. Не знаю, как это решить без помощи __dirname
-// В строчках 15 и 19 видно, что не хватает директории
+// В строчках 17 и 21 видно, что не хватает директории, если использовать process.cwd(), т.к. я работаю из корня
+
+// Работает только такой вариант функции (он используется в начале файла):
+// const formFullPath = (filepath) => path.resolve('__fixtures__', filepath);
 
 const getExtension = (file) => path.extname(file).slice(1).toLowerCase();
 
