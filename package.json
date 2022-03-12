@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/M4XPRD/frontend-project-lvl2#readme",
   "dependencies": {
-    "@hexlet/immutable-fs-trees": "^0.7.1",
     "commander": "^8.3.0",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
