@@ -6,7 +6,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fb5424cb2db36a0fee0b/test_coverage)](https://codeclimate.com/github/M4XPRD/frontend-project-lvl2/test_coverage)
 
 ## Description:
-This is the utilite, which shows the difference between two files. The output can be shown with different formats.
+This is the utility, which shows the difference between two files. The output can be shown with different formats.
 <br></br>
 **List of supported extensions:**
 
