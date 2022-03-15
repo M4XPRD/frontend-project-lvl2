@@ -46,9 +46,9 @@ const buildFullPath = (filepath) => {
 // Работает только такой вариант функции (он используется в начале файла):
 // const buildFullPath = (filepath) => path.resolve('__fixtures__', filepath);
 
-const getExtension = (file) => path.extname(file).slice(1).toLowerCase();
+const getExtension = (filepath) => path.extname(filepath).slice(1).toLowerCase();
 
-const readFileData = (file) => readFileSync(file, 'utf-8');
+const readFileData = (filepath) => readFileSync(filepath, 'utf-8');
 
 const loadData = (file) => {
   const fullPath = buildFullPath(file);
@@ -61,10 +61,10 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const parsedFile1 = loadData(filepath1);
   const parsedFile2 = loadData(filepath2);
 
-  const diffBetweenObjects = objectDiff(parsedFile1, parsedFile2);
-  const formatter = format(diffBetweenObjects, formatName);
+  const getDiff = objectDiff(parsedFile1, parsedFile2);
+  const formattedFile = format(getDiff, formatName);
 
-  return formatter;
+  return formattedFile;
 };
 
 export default genDiff;
